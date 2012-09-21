@@ -1,4 +1,4 @@
 practiceJavaProgramming
 =======================
 
-Sometimes, we go back to the fundamental skills an practice.
+Sometimes, we go back to the fundamental skills and practice.
