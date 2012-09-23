@@ -9,24 +9,58 @@ package lyk.practice.datastructure;
  */
 public class BinaryTreeNode<E> {
     E value;
-    BinaryTreeNode<E> left=null;
-    BinaryTreeNode<E> right=null;
+    BinaryTreeNode<E> left = null;
+    BinaryTreeNode<E> right = null;
 
-    public BinaryTreeNode<E> leftChild(E value){
-        if(left==null) {
-        }else{
-            left=new BinaryTreeNode<E>();
+
+    public void middleOrderTraverseOutput() {
+        middleOrderTraverseOutput(this);
+    }
+
+    public void middleOrderTraverseOutput(BinaryTreeNode<E> n) {
+        if (n == null) return;
+        middleOrderTraverseOutput(n.left);
+        System.out.println(value);
+        middleOrderTraverseOutput(n.right);
+    }
+
+    public E leftValue() {
+        return left.value;
+    }
+
+    public E rightValue() {
+        return right.value;
+    }
+
+    public BinaryTreeNode<E> leftChild() {
+        if (left == null) {
+            left = new BinaryTreeNode<E>();
         }
-        left.value=value;
+        left.value = value;
         return left;
     }
 
-    public BinaryTreeNode<E> rightChild(E value){
-        if(right==null) {
-        }else{
-            right=new BinaryTreeNode<E>();
+    public BinaryTreeNode<E> rightChild() {
+        if (right == null) {
+            right = new BinaryTreeNode<E>();
         }
-        right.value=value;
+        right.value = value;
+        return right;
+    }
+
+    public BinaryTreeNode<E> leftChild(E value) {
+        if (left == null) {
+            left = new BinaryTreeNode<E>();
+        }
+        left.value = value;
+        return left;
+    }
+
+    public BinaryTreeNode<E> rightChild(E value) {
+        if (right == null) {
+            right = new BinaryTreeNode<E>();
+        }
+        right.value = value;
         return right;
     }
 }
