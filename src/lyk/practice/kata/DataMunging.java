@@ -1,6 +1,7 @@
 package lyk.practice.kata;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -55,8 +56,40 @@ public class DataMunging {
     }
 
 
+    public static void football() {
+
+        try {
+            BufferedReader footballdata = new BufferedReader(new FileReader("football.dat"));
+
+            String line;
+            int emptyline = 5;
+            while (emptyline-- > 0) {
+                footballdata.readLine();
+            }
+
+            int diff = 999;
+            String name = "";
+            while ((line = footballdata.readLine()) != null) {
+                System.out.println(name + "@" + diff);
+                String[] cols = line.split("\\s+");
+                if (cols.length < 3) continue;
+                int d = Math.abs(Integer.parseInt(cols[7]) - Integer.parseInt(cols[9]));
+                if (d < diff) {
+                    diff = d;
+                    name = cols[2];
+                }
+            }
+            System.out.println(name + "@" + diff);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
-        weather();
+        football();
     }
 
 }
