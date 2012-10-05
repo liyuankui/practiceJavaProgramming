@@ -12,14 +12,22 @@ public class Util {
 
     }
 
+    public static void DumpArray(int[] array) {
+        int n = array.length;
+        for (Object anArray : array) {
+            System.out.print(anArray.toString());
+        }
+        System.out.println();
+    }
+
     public static void DumpMatrix(int[][] matrix) {
         int m = matrix.length;
         int n = matrix[0].length;
 
         System.out.println(matrix.getClass().getCanonicalName());
-        for (int i = 0; i < m; i++) {
+        for (int[] aMatrix : matrix) {
             for (int j = 0; j < n; j++)
-                System.out.print(matrix[i][j] + " ");
+                System.out.print(aMatrix[j] + " ");
             System.out.println();
         }
     }

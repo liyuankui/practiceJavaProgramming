@@ -39,7 +39,7 @@ public class ImmutableStack<T> {
 
     public ImmutableStack<T> reverse() {
         ImmutableStack<T> reversed = new ImmutableStack<T>();
-        System.out.println("reversing a stack sized " + this.size());
+        //System.out.println("reversing a stack sized " + this.size());
         for (ImmutableStack<T> tmp = this; tmp.size() > 0; tmp = tmp.pop())
             reversed = reversed.push(tmp.top());
         return reversed;

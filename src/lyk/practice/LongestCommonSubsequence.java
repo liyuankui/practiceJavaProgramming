@@ -5,9 +5,9 @@ package lyk.practice;
  * User: kyle
  * Date: 10/3/12
  * Time: 11:23 PM
- * The LongestCommonSequence class is intended to fulfil some duties.
+ * The LongestCommonSubsequence class is intended to fulfil some duties.
  */
-public class LongestCommonSequence {
+public class LongestCommonSubsequence {
 
     public static void lcs(char[] p, char[] q) {
         int m = p.length, n = q.length;
