@@ -53,8 +53,8 @@ public class LinkedList<E> {
     // All of this results from a known, and deliberate, weakness of generics in Java: it was implemented
     // using erasure, so "generic" classes don't know what type argument they were created with at run time,
     // and therefore can not provide type-safety unless some explicit mechanism (type-checking) is implemented.
-    public E[] values() {
-        E[] array = (E[]) new Object[count];
+    public Object[] values() {
+        Object[] array = new Object[count];
         int i = 0;
         LinkedNode<E> ptr;
         for (ptr = head; ptr != null; ptr = ptr.next) {
