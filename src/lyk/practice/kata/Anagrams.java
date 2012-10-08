@@ -22,6 +22,7 @@ public class Anagrams {
             31, 37, 41, 43, 47, 53, 59, 61, 67, 71,
             73, 79, 83, 89, 97, 101, 103, 107, 109};
 
+    // attempted to using Gödel encoding to hash the words, turned out the number is too big to represent
     public static void insertWordPrimeHashing(String str) {
         char[] s = str.toCharArray();
         double hash = 0;
@@ -49,9 +50,8 @@ public class Anagrams {
     public static void main(String[] args) {
         try {
             BufferedReader reader = new BufferedReader(new FileReader("wordlist.txt"));
-            String line = "";
+            String line;
             int count = 0;
-            int falseCount = 0;
 
             while ((line = reader.readLine()) != null) {
                 insertWord(line);
@@ -88,7 +88,6 @@ public class Anagrams {
             }
         }
         System.out.println("Set Number: " + anagramsCount);
-
     }
 }
 
