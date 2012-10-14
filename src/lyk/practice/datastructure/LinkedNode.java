@@ -9,5 +9,13 @@ package lyk.practice.datastructure;
  */
 public class LinkedNode<E> {
     public E value;
-    public LinkedNode<E> next;
+    public LinkedNode<E> next = null;
+
+    public LinkedNode() {
+
+    }
+
+    public LinkedNode(E v) {
+        this.value = v;
+    }
 }

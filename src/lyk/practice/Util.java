@@ -12,10 +12,50 @@ public class Util {
 
     }
 
+    public static String stringWithNC(int n, char c) {
+        StringBuilder sb = new StringBuilder();
+        while (n-- > 0) {
+            sb.append(c);
+        }
+        return sb.toString();
+    }
+
+    public static int CombinationNumber(int n, int k) {
+        int x = 1;
+        int d = k > n - k ? k : n - k;
+        int p = k < n - k ? k : n - k;
+
+        System.out.println("d" + d + "p" + p);
+        while (n > d) {
+            x *= n--;
+        }
+        System.out.println("d" + d + "p" + p);
+        x /= PermutationNumber(p);
+
+        return x;
+    }
+
+    public static int PermutationNumber(int n) {
+        int x = 1;
+        System.out.println("per n=" + n);
+        while (n > 0) {
+            x *= n--;
+        }
+        System.out.println("per n=" + n);
+        return x;
+    }
+
+    public static int powerTwo(int x, int p) {
+        while (p-- > 0) {
+            x <<= 1;
+        }
+        return x;
+    }
+
     public static void DumpArray(int[] array) {
         int n = array.length;
         for (Object anArray : array) {
-            System.out.print(anArray.toString());
+            System.out.print(anArray.toString() + " ");
         }
         System.out.println();
     }

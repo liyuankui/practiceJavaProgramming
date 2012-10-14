@@ -7,6 +7,7 @@ public class MinMaxHeap<E extends IndexedComparable<E>> {
     // min at root and at even levels; max at odd levels
     ArrayList<E> heap;
 
+
     public MinMaxHeap() {
         heap = new ArrayList<E>();
     }

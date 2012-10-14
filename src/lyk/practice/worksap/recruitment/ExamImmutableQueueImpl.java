@@ -115,6 +115,43 @@ public class ExamImmutableQueueImpl<E> implements ExamImmutableQueue<E> {
         return size;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
+
+    // it's not just simple as concatenation
+    public ExamImmutableQueue<E> append(ExamImmutableQueueImpl<E> queue) {
+        if (queue.size() == 0) {
+            return this;
+        }
+        if (this.size() == 0) {
+            return queue;
+        }
+
+        ExamImmutableQueueImpl<E> z = queue;
+        ExamImmutableQueueImpl<E> newqueue = new ExamImmutableQueueImpl<E>(this.head, this.tail, null);
+        System.out.println("new queue size:" + newqueue.size());
+        System.out.println("another queue size:" + z.size());
+        while (z.size() > 0) {
+            System.out.println("-new queue size:" + newqueue.size());
+            System.out.println("-another queue size:" + z.size());
+            System.out.println("-z.peek:" + z.peek());
+            newqueue = (ExamImmutableQueueImpl<E>) newqueue.enqueue(z.peek());
+            z = (ExamImmutableQueueImpl<E>) z.dequeue();
+        }
+
+        return newqueue;
+
+    }
+
+    public static void main(String[] args) {
+        ExamImmutableQueueImpl<String> s = new ExamImmutableQueueImpl<String>();
+
+        ExamImmutableQueueImpl<String> q = (ExamImmutableQueueImpl<String>) s.enqueue("ABC");
+        ExamImmutableQueueImpl<String> o = (ExamImmutableQueueImpl<String>) q.enqueue("ccc");
+        ExamImmutableQueueImpl<String> t = (ExamImmutableQueueImpl<String>) o.append(q);
+        System.out.println(t.peek());
+        System.out.println(o.size() + "+" + q.size() + "=" + t.size());
+
+
+    }
     /*
     public static void time(){
         long currentTime = System.currentTimeMillis();
