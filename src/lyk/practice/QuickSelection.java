@@ -42,10 +42,7 @@ public class QuickSelection {
     }
 
     public static void swap(int[] arr, int a, int b) {
-        int tmp = arr[b];
-        arr[b] = arr[a];
-        arr[a] = tmp;
-        //arr[a]^=arr[b]; arr[b]^=arr[a]; arr[a]^=arr[b];
+        Util.swap(arr, a, b);
     }
 
     public static void main(String[] args) {

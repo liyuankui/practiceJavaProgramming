@@ -12,6 +12,23 @@ public class Util {
 
     }
 
+    public static int min(int a, int b) {
+        return a < b ? a : b;
+    }
+
+    public static void reverse(int[] arr, int a, int b) {
+        while (a <= b) {
+            swap(arr, a++, b--);
+        }
+    }
+
+    public static void swap(int[] arr, int a, int b) {
+        int tmp = arr[b];
+        arr[b] = arr[a];
+        arr[a] = tmp;
+        //arr[a]^=arr[b]; arr[b]^=arr[a]; arr[a]^=arr[b];
+    }
+
     public static String stringWithNC(int n, char c) {
         StringBuilder sb = new StringBuilder();
         while (n-- > 0) {
