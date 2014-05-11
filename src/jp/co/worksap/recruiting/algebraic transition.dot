@@ -1,0 +1,30 @@
+digraph fourElementQueue{
+    rankdir=LR;
+    size="8.5";
+        A B C D;
+        AA AB AC AD;
+        AAA AAB AAC AAD;
+        ABA ABB ABC ABD;
+
+    node [shape = circle];
+    A -> AA [ label= "eq A"];
+    A -> AB [ label= "eq B"];
+    A -> AC [ label= "eq C"];
+    A -> AD [ label= "eq D"];
+    B -> BA [ label= "eq A"];
+    B -> BB [ label= "eq B"];
+    B -> BC [ label= "eq C"];
+    B -> BD [ label= "eq D"];
+    C -> CA [ label= "eq A"];
+    C -> CB [ label= "eq B"];
+    C -> CC [ label= "eq C"];
+    C -> CD [ label= "eq D"];
+    D -> DA [ label= "eq A"];
+    D -> DB [ label= "eq B"];
+    D -> DC [ label= "eq C"];
+    D -> DD [ label= "eq D"];
+    AA -> AAA [ label= "eq A"];
+     -> B [ label= "eq B"];
+     -> C [ label= "eq C"];
+     -> D [ label= "eq D"];
+}

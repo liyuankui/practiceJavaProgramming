@@ -1,0 +1,33 @@
+digraph threeElementQueue{
+    node [shape = circle];
+    {rank=same; nil;}
+    {rank=same; A;B;C}
+    {rank = same; AA; AB; AC; BA; BB; BC; CA; CB; CC;}
+
+    nil -> A [ label= "+A" color="red"];
+    nil -> B [ label= "+B" color="red"];
+    nil -> C [ label= "+C" color="red"];
+    A -> AA [ label= "+A" color="red"];
+    A -> AB [ label= "+B" color="red"];
+    A -> AC [ label= "+C" color="red"];
+    B -> BA [ label= "+A" color="red"];
+    B -> BB [ label= "+B" color="red"];
+    B -> BC [ label= "+C" color="red"];
+    C -> CA [ label= "+A" color="red"];
+    C -> CB [ label= "+B" color="red"];
+    C -> CC [ label= "+C" color="red"];
+
+    A -> nil [ label= "-" color="blue"];
+    B -> nil [ label= "-" color="blue"];
+    C -> nil [ label= "-" color="blue"];
+    AA -> A [ label= "-" color="blue"];
+    AB -> B [ label= "-" color="blue"];
+    AC -> C [ label= "-" color="blue"];
+    BA -> A [ label= "-" color="blue"];
+    BB -> B [ label= "-" color="blue"];
+    BC -> C [ label= "-" color="blue"];
+    CA -> A [ label= "-" color="blue"];
+    CB -> B [ label= "-" color="blue"];
+    CC -> C [ label= "-" color="blue"];
+}
+
