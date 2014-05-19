@@ -5,6 +5,7 @@ package lyk.practice.leetcode;
  * Date: 5/9/14
  * Time: 9:29 PM
  * The WordLadder2 class is intended to fulfil some duties.
+ * http://oj.leetcode.com/problems/word-ladder-ii/
  */
 import lyk.practice.Util;
 
