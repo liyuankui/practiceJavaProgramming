@@ -33,20 +33,22 @@ public class GenerateParentheses {
 
     public static ArrayList<String> generateParenthesis(int n) {
         ArrayList<String> ret = new ArrayList<String>();
-        Stack<Character> stack = new Stack<Character>();
-        char pl='(';
-        char pr=')';
-
-//        stack.empty();
-        for(int i =0; i<n;i++){
-            stack.push(pl);
+        if(n>0){
+            generateString(n,n,"",ret);
         }
-        while(stack.size()>0) {
-            StringBuilder sb = new StringBuilder();
-            stack.pop()
-        }
-
         return  ret;
+    }
+
+    public static void generateString(int left, int right, String s, ArrayList<String> ret){
+        if(left==0&&right==0){
+            ret.add(s);
+        }
+        if(left>0){
+            generateString(left-1,right,s+"(",ret);
+        }
+        if(right>0&&left<right){
+            generateString(left, right-1,s+")",ret);
+        }
     }
 }
 
