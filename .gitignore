@@ -1,7 +1,12 @@
+out/*
+.idea/
 *.class
+.gitignore
+.idea/misc.xml
+ProgressOfJava.iml
 
 # Package Files #
 *.jar
 *.war
 *.ear
-out/
+*.iml
